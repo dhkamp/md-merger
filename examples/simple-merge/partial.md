@@ -1,0 +1,3 @@
+# Partial
+
+Dolor Sit Amet
