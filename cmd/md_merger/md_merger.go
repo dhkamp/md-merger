@@ -18,7 +18,7 @@ var (
 		Short: "md-merger is a CLI tool to merge markdown files",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(inputPath) == 0 {
-				return errors.New("missing required flag --inputPath")
+				return errors.New("missing required flag --input")
 			}
 
 			_, statErr := os.Stat(inputPath)
@@ -29,7 +29,7 @@ var (
 			return nil
 		},
 		Run: func(cmd *cobra.Command, args []string) {
-
+			fmt.Println(outDir)
 			contentBuff, readErr := os.ReadFile(inputPath)
 			if readErr != nil {
 				fmt.Println(readErr)
