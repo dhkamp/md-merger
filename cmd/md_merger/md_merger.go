@@ -6,6 +6,7 @@ import (
 	"io/fs"
 	"os"
 	"path"
+	"path/filepath"
 
 	"github.com/dhkamp/md-merger/internal/partials"
 	"github.com/dhkamp/md-merger/internal/reader"
@@ -33,6 +34,16 @@ var (
 			return nil
 		},
 		Run: func(cmd *cobra.Command, args []string) {
+
+			c, e := filepath.Abs(inputPath)
+			if e != nil {
+				fmt.Println(e)
+				return
+			}
+
+			fmt.Println(c)
+			fmt.Println(path.Dir(c))
+
 			contentBuff, readErr := reader.ReadFile(inputPath)
 			if readErr != nil {
 				fmt.Println(readErr)

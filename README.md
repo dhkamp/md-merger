@@ -1,6 +1,7 @@
 # md-merger
 
-Lorem Ipsum
+md-merger is a tool for merging markdown files.
+
 
 ## Development
 
