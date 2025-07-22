@@ -1,12 +1,22 @@
 # md-merger
 
-md-merger is a tool for merging markdown files.
+<figure style="text-align:center;">
+				
+![md-merger Flow](./assets/flow.png)
+<figcaption style="font-weight: bold;font-size:0.75rem;text-align:center;">md-merger Flow</figcaption>
+</figure>
 
+
+
+**md-merger** merges multiple "partial" markdown documents into a single file.
+The base for the new document is a root-File (you can call it what you want) which holds all references to the
+partials that shall be part of the outfile.
+
+Partials area identified by a comment (`<!-- partial:filename.md -->`) in the rootfile.
+
+_Relative Links to Images and Files will be updated so they remain working in the outfile._
 
 ## Examples
-
-Merge markdown files. This will create a root_merged.md inside the root directory. 
-Relative markdown links will be updated.
 
 **root.md**
 ```md
@@ -25,7 +35,7 @@ Lorem Ipsum Dolor
 By running the following command the merged file will be created.
 
 ```bash
-md-merger --input root.md
+md-merger merge -input root.md
 ```
 
 The result will be the following markdown
@@ -38,6 +48,27 @@ The following comment is used to import content.
 Lorem Ipsum Dolor
 ![My Image](partials/my-image.png)
 ```
+
+## Commands
+
+**merge**
+```bash
+md-merger merge [options]
+```
+
+**help**
+```bash
+md-merger help
+```
+
+## Options
+
+|Option|Required|Description|
+|---|---|---|
+|-i, --input|✅|Rootfile path|
+|-o, --output|❌|Name of the output file. Default is `{inputFileName}_merged.md`|
+
+
 
 ## Development
 
