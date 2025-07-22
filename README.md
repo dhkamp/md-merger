@@ -43,10 +43,10 @@ Lorem Ipsum Dolor
 
 **Compiling to executbale (Linux)**
 ```bash
-GOOS=linux GOARCH=amd64 go build -o build/linux/md-merger cmd/main.go
+GOOS=linux GOARCH=amd64 go build -o build/linux/md-merger main.go
 ```
 
 **Compiling to executbale (Windows)**
 ```bash
-GOOS=windows GOARCH=amd64 go build -o build/win/md-merger.exe cmd/main.go
+GOOS=windows GOARCH=amd64 go build -o build/win/md-merger.exe main.go
 ```
