@@ -1,12 +1,10 @@
 # md-merger
 
-<figure style="text-align:center;">
-				
-![md-merger Flow](./assets/flow.png)
-<figcaption style="font-weight: bold;font-size:0.75rem;text-align:center;">md-merger Flow</figcaption>
-</figure>
 
-
+<div style="text-align:center">
+  <img src="./assets/flow.png" height="320">
+</div>
+<p style="text-align:center">md-merger Flow</p>
 
 **md-merger** merges multiple "partial" markdown documents into a single file.
 The base for the new document is a root-File (you can call it what you want) which holds all references to the
